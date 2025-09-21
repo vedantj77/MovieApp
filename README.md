@@ -1,7 +1,5 @@
 # 🎬 Movie App
 
-<img width="1072" height="504" alt="image" src="https://github.com/user-attachments/assets/e1d61a99-8a13-4115-ab24-461de723f4c3" />
-
 ## 🚀 Live Demo  
 👉 [Click here to view the project](https://vedantj77.github.io/MovieApp/)
 
