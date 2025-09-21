@@ -130,22 +130,22 @@ const App = () => {
   };
 
   return (
-    <main>
+    <main className="min-h-screen flex flex-col relative bg-primary">
       <div className="pattern" />
-      <div className="wrapper">
-        <header>
-          <img className="hero" src="./hero.png" alt="Hero Poster" />
-          <h1>
+      <div className="wrapper px-5 py-10 max-w-7xl mx-auto flex flex-col relative z-10">
+        <header className="mt-10 text-center">
+          <img className="w-full max-w-md sm:max-w-lg h-auto object-contain mx-auto drop-shadow-md" src="./hero.png" alt="Hero Poster" />
+          <h1 className="text-4xl sm:text-5xl font-bold text-white mt-5">
             Find <span className="text-gradient">Movies</span> You'll Enjoy Without the Hassle
           </h1>
-          <form onSubmit={handleSearchSubmit}>
+          <form onSubmit={handleSearchSubmit} className="mt-6">
             <Search searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
           </form>
         </header>
 
         {trendingMovies.length > 0 && (
-          <section className="trending relative">
-            <h2>Trending Movies</h2>
+          <section className="trending relative mt-16">
+            <h2 className="text-xl sm:text-2xl font-bold text-white mb-4">Trending Movies</h2>
             <button
               type="button"
               aria-label="Scroll left"
@@ -169,25 +169,25 @@ const App = () => {
               </svg>
             </button>
 
-            <ul ref={trendingRef}>
+            <ul ref={trendingRef} className="flex gap-4 overflow-x-auto py-2 hide-scrollbar">
               {trendingMovies.map((movie, index) => (
-                <li key={movie.$id || index}>
-                  {movie.poster_url && <img src={movie.poster_url} alt={movie.title} />}
-                  <p className="title">{movie.title}</p>
+                <li key={movie.$id || index} className="relative shrink-0 text-center w-32 sm:w-40 md:w-48 lg:w-52">
+                  {movie.poster_url && <img src={movie.poster_url} alt={movie.title} className="w-full rounded-2xl object-cover shadow-xl aspect-2-3" />}
+                  <p className="mt-2 text-sm md:text-sm text-gray-200 line-clamp-2">{movie.title}</p>
                 </li>
               ))}
             </ul>
           </section>
         )}
 
-        <section className="all-movies" ref={resultsRef}>
-          <h2>All Movies</h2>
+        <section className="all-movies mt-16 mb-10" ref={resultsRef}>
+          <h2 className="text-xl sm:text-2xl font-bold text-white mb-4">All Movies</h2>
           {isLoading ? (
             <Spinner />
           ) : errorMessage ? (
             <p className="text-red-500">{errorMessage}</p>
           ) : (
-            <ul>
+            <ul className="grid grid-cols-1 gap-4 xs:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
               {movieList.map((movie) => (
                 <MovieCard key={movie.id} movie={movie} />
               ))}

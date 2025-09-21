@@ -1,37 +1,10 @@
-/* Minimal app-level overrides — styling handled by Tailwind + index.css */
-
 #root {
-  /* Intentionally left minimal to avoid conflicts with Tailwind layout */
-}
-
-body {
-  font-size: 16px;
-  margin: 0;
-  padding: 0;
-}
-
-img, video {
-  max-width: 100%;
-  height: auto;
-}
-
-.container {
-  width: 90%;
-  max-width: 1200px;
+  max-width: 1280px;
   margin: 0 auto;
-}
-@media (min-width: 1024px) {
-  body {
-    font-size: 18px;
-  }
-  .container {
-    width: 80%;
-  }
+  padding: 2rem;
+  text-align: center;
 }
 
-
-
-/* Optional Vite logo demo styles (safe to keep/remove) */
 .logo {
   height: 6em;
   padding: 1.5em;
@@ -46,8 +19,12 @@ img, video {
 }
 
 @keyframes logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -56,8 +33,10 @@ img, video {
   }
 }
 
-/* Remove template classes not needed */
-.card { padding: 0; }
-.read-the-docs { color: inherit; }
+.card {
+  padding: 2em;
+}
 
-/* No .trending-* classes here — trending is styled in index.css */
+.read-the-docs {
+  color: #888;
+}
