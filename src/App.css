@@ -4,6 +4,33 @@
   /* Intentionally left minimal to avoid conflicts with Tailwind layout */
 }
 
+body {
+  font-size: 16px;
+  margin: 0;
+  padding: 0;
+}
+
+img, video {
+  max-width: 100%;
+  height: auto;
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+@media (min-width: 1024px) {
+  body {
+    font-size: 18px;
+  }
+  .container {
+    width: 80%;
+  }
+}
+
+
+
 /* Optional Vite logo demo styles (safe to keep/remove) */
 .logo {
   height: 6em;
